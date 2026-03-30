@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Web Development Courses</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center ;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            width: 600px;
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #4F46E5;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px ;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.9s;
+        }
+
+        input:focus {
+            border-color: #60A5FA;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4F46E5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #60A5FA;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            color: #4F46E5;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+    .team-section {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .team-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .team-member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        border: 2px solid #e2e8f0;
+        margin-bottom: 8px;
+    }
+
+    .team-member p {
+        font-size: 0.95rem;
+        color: #4F46E5;
+        font-weight: 700;
+    }
+    </style>
+</head>
+
+<body>
+<div class="login-container">
+            <h2><span style="font-size: 1.5em;">🔐</span> Login to Web Dev</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            
+            <!-- قسم الفريق -->
+    <div class="team-section">
+        <h3 style="text-align: center; color: #4F46E5; margin: 30px 0 15px;">Built by Frontend Bros 💻🎨:</h3>
+        <div class="team-container">
+            <!-- عضو 1 -->
+            <div class="team-member">
+                <div class="avatar" style="background-image: url('Team/Mohamed\ Wael.jpg');"></div>
+                <p>Mohamed Wael</p>
+            </div>
+            
+            <!-- عضو 2 -->
+            <div class="team-member">
+                <div class="avatar" style="background-image: url('Team/Mohamed\ Ahmed.jpg');"></div>
+                <p>Mohamed Ahmed</p>
+            </div>
+
+            <!-- عضو 3 -->
+            <div class="team-member">
+                <div class="avatar" style="background-image: url('Team/Mohamed\ abdelhamed.jpg');"></div>
+                <p>Mohamed Abdelhamed</p>
+            </div>
+
+            <!-- عضو 4 -->
+            <div class="team-member">
+                <div class="avatar" style="background-image: url('Team/Mohamed\ elsayed.png');"></div>
+                <p>Mohamed Elsayed</p>
+            </div>
+        </div>
+    </div>
+
+
+            <div class="footer-links">
+                <a href="#">Forgot Password?</a>
+            </div>
+</div>
+
+    <script>
+        // مؤقتًا: عند الضغط على Login، انتقل لصفحة index
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("✅ Logged in successfully!");
+            window.location.href = "Home.html";
+        });
+    </script>
+</body>
+</html>
