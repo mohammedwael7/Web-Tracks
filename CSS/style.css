@@ -13,6 +13,149 @@ body {
     position: relative;
 }
 
+/* ===== Smooth Scrolling ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Loading Animation ===== */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ================================================
+   LOGIN PAGE (index.html)
+   ================================================ */
+
+.login-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    width: 600px;
+    max-width: 95vw;
+    text-align: center;
+    color: #333;
+}
+
+.login-container h2 {
+    color: #4F46E5;
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.9s;
+}
+
+.login-container input:focus {
+    border-color: #60A5FA;
+    outline: none;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #4F46E5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.login-container button:hover {
+    background: #60A5FA;
+}
+
+.login-footer-links {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-footer-links a {
+    color: #4F46E5;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.login-footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Team Section */
+.team-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.team-section h3 {
+    text-align: center;
+    color: #4F46E5;
+    margin: 30px 0 15px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #e2e8f0;
+    margin-bottom: 8px;
+}
+
+.team-member p {
+    font-size: 0.95rem;
+    color: #4F46E5;
+    font-weight: 700;
+}
+
+
+/* ================================================
+   HOME PAGE (Home.html)
+   ================================================ */
+
 /* ===== Navigator Styles ===== */
 .Navigator {
     background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
@@ -54,6 +197,7 @@ body {
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.5);
     border: 2px solid transparent;
+    margin-left: 0;
 }
 
 .Navigator a:hover {
@@ -88,15 +232,9 @@ body {
     animation: fadeIn 0.6s ease;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.content:hover {
+    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.2);
+    transition: box-shadow 0.3s ease;
 }
 
 #inner_head {
@@ -131,8 +269,7 @@ body {
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background:  #c3cfe2;
-
+    background: #c3cfe2;
 }
 
 /* ===== Footer Styles ===== */
@@ -200,89 +337,326 @@ body {
     border-top: 1px solid #e2e8f0;
 }
 
-/* ===== Responsive Design ===== */
+
+/* ================================================
+   INNER PAGES (Frontend.html, Backend.html, Fullstack.html)
+   ================================================ */
+
+.inner-page-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    line-height: 1.3;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.inner-page-body h2 {
+    color: rgb(81, 6, 201);
+}
+
+.inner-page-body h3 {
+    color: #4F46E5;
+    font-size: 1.6rem;
+    margin: 25px 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.inner-page-body p {
+    color: rgb(1, 1, 92);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.inner-page-body ul {
+    color: rgb(1, 1, 92);
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.inner-page-body ul li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+.inner-page-body ul li strong {
+    color: #4F46E5;
+}
+
+/* Hero image on inner pages */
+.inner-hero {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inner-hero img {
+    width: 80%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Enroll button */
+.enroll-wrapper {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.enroll-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 14px 32px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.enroll-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+
+/* ---- Large tablets / small desktops (max 1024px) ---- */
 @media (max-width: 1024px) {
     .Navigator {
         justify-content: center;
     }
-    
+
     .Navigator h1 {
         font-size: 2rem;
         margin-right: 15px;
         width: 100%;
         text-align: center;
     }
-    
+
     .content {
         width: 90%;
         padding: 20px;
     }
-    
+
     #inner_head {
         font-size: 2rem;
     }
+
+    .login-container {
+        width: 85%;
+    }
+
+    .inner-hero img {
+        width: 90%;
+        height: 350px;
+    }
 }
 
+/* ---- Tablets (max 768px) ---- */
 @media (max-width: 768px) {
     .Navigator {
         padding: 15px;
+        justify-content: center;
     }
-    
+
     .Navigator h1 {
         font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
     }
-    
+
     .Navigator a {
         font-size: 0.85rem;
         padding: 10px 15px;
         margin: 5px;
     }
-    
+
     .Navigator a img {
         width: 35px;
         height: 35px;
     }
-    
+
     .content {
         width: 95%;
         padding: 15px;
         margin: 20px auto;
     }
-    
+
     #inner_head {
         font-size: 1.5rem;
     }
-    
+
     #ContentFrame {
         height: 1200px;
     }
-    
+
     .footer-links {
         flex-direction: column;
         gap: 10px;
+        align-items: center;
     }
-    
+
     .footer-links a:not(:last-child)::after {
         display: none;
     }
-}
 
-/* ===== Smooth Scrolling ===== */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ===== Loading Animation ===== */
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
+    .login-container {
+        width: 90%;
+        padding: 25px 20px;
     }
-    50% {
-        opacity: 0.5;
+
+    .inner-page-body {
+        font-size: large;
+        padding: 15px;
+    }
+
+    .inner-page-body h3 {
+        font-size: 1.3rem;
+    }
+
+    .inner-hero img {
+        width: 100%;
+        height: 260px;
+    }
+
+    .enroll-btn {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+
+    .team-container {
+        gap: 15px;
+    }
+
+    .avatar {
+        width: 70px;
+        height: 70px;
     }
 }
 
-.content:hover {
-    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.2);
-    transition: box-shadow 0.3s ease;
+/* ---- Mobile phones (max 480px) ---- */
+@media (max-width: 480px) {
+    .Navigator {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .Navigator h1 {
+        font-size: 1.3rem;
+    }
+
+    .Navigator a {
+        font-size: 0.78rem;
+        padding: 8px 10px;
+    }
+
+    .Navigator a img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .content {
+        width: 98%;
+        padding: 12px;
+        margin: 12px auto;
+        border-radius: 12px;
+    }
+
+    #inner_head {
+        font-size: 1.3rem;
+    }
+
+    #ContentFrame {
+        height: 1050px;
+    }
+
+    .login-container {
+        width: 95%;
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .login-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .login-container input {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .inner-page-body {
+        font-size: medium;
+        padding: 12px;
+    }
+
+    .inner-page-body h2 {
+        font-size: 1.4rem;
+    }
+
+    .inner-page-body h3 {
+        font-size: 1.1rem;
+    }
+
+    .inner-hero img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .enroll-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .footer {
+        padding: 20px 15px;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .team-container {
+        gap: 12px;
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-member p {
+        font-size: 0.82rem;
+    }
+}
+
+/* ---- Very small phones (max 360px) ---- */
+@media (max-width: 360px) {
+    .Navigator a {
+        font-size: 0.7rem;
+        padding: 6px 8px;
+    }
+
+    .Navigator h1 {
+        font-size: 1.1rem;
+    }
+
+    #ContentFrame {
+        height: 950px;
+    }
+
+    .enroll-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
 }
