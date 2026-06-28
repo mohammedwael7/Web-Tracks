@@ -8,6 +8,40 @@
 </head>
 <body>
 
+    <!-- Mobile top bar -->
+    <div class="mobile-topbar">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <h1 class="mobile-title">Web Development</h1>
+    </div>
+
+    <!-- Sidebar overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+        <h2 class="sidebar-title">Web Development</h2>
+        <nav class="sidebar-nav">
+            <a href="Frontend.html" target="ContentFrame" class="sidebar-link">
+                <img src="Images/p1 logo.png" alt="Frontend Development">
+                Frontend Development
+            </a>
+            <a href="Backend.html" target="ContentFrame" class="sidebar-link">
+                <img src="Images/p2 logo.png" alt="Backend Development">
+                Backend Development
+            </a>
+            <a href="Fullstack.html" target="ContentFrame" class="sidebar-link">
+                <img src="Images/p3 logo.png" alt="Full-Stack Development">
+                Full-Stack Development
+            </a>
+        </nav>
+    </div>
+
+    <!-- Desktop navigator (hidden on mobile) -->
     <div class="Navigator">
         <h1>Web Development</h1>
         <a href="Frontend.html" target="ContentFrame"><img src="Images/p1 logo.png" alt="Frontend Development">Frontend Development</a>
@@ -31,6 +65,34 @@
             .Frontend Bros. All rights reserved 2025 ©
         </div>
     </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebarClose = document.getElementById('sidebarClose');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('show');
+            document.body.classList.add('sidebar-open');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+            document.body.classList.remove('sidebar-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // Close sidebar when a link is clicked
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', closeSidebar);
+        });
+    </script>
 
 </body>
 </html>
