@@ -11,6 +11,7 @@ It provides clear and structured information about:
 * Full-Stack Development
 
 The goal is to help users choose the right path based on their interests.
+
 <img width="1376" height="768" alt="3-web development (2)" src="https://github.com/user-attachments/assets/e4a6d6b8-0b9e-425f-91eb-3d43d8e7ecc9" />
 ---
 
